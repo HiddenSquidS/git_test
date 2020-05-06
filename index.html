@@ -1,116 +1,31 @@
-<script>
+<!DOCTYPE <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <title></title>
+   <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="main">
 
-function computerPlay(){
-    var random = Math.floor(Math.random()*Math.floor(3));
-    var string;
-    switch (random){
-        
-       case 0:
-       string="rock";
-       break;
-       case 1:
-       string="paper"
-       break;
-       case 2:
-       string="scissors"
-       break;
-       default:
-       break;
+      <header class="header">
+        <h1>Welcome to the <b>Game!</b></h1>
+      </header>
+      <div class="explain">
+        <p>Okay so it is simple you play this simple 
+          game using only three keys on your keyboard. </p>
+      </div>
+      <div class="select">
+        <button id="rock" value="rock">Rock</button>
+        <button id="paper" value="papper">Papper</button>
+        <button id="scissor" value="scissors">Scissor</button>
+      </div>
+      <div class="result-text" id="container">
+      </div>
 
-
-    }
-
-    return string;
-}
-
-
-function playRound(player, computer){
-
-      var outputString;
-
- if (player.toLowerCase()=="rock"){
-     switch (computer){
-       case "paper":
-       return "You Lose! Paper beats Rock";
-       break;
-       case "scissors":
-       return "You Win! Rock beats Paper";
-       break;
-       case "rock":
-       return "It is a tie";
-       break;
-       default:
-       break;
-
-     }
-
- }
- if (player.toLowerCase()=="papper"){
-     switch (computer){
-       case "rock":
-       return "You Win! Paper beats Rock";
-       break;
-       case "scissors":
-       return "You Lose! Scissors beats Paper";
-       break;
-       case "paper":
-       return "It is a tie";
-       break;
-       default:
-       break;
-
-     }
-
- }
- if (player.toLowerCase()=="scissors"){
-     switch (computer){
-       case "rock":
-       return "You Lose! Rock beats Scissors ";
-       break;
-       case "paper":
-       return "You Win! Scissors beats Paper";
-       break;
-       case "scissors":
-       return "It is a tie";
-       break;
-       default:
-       break;
-
-     }
-
- }
-
-
-}
-
-function game(player,computer){
-  
-  var score =[0,0];
-  for(var i=0;i<5;i++){
-
-if (playRound(player,computer).search("Lose")){
-    score[1]+=1;
-}
-else if (playRound(player,computer).search("Win")){
-    score[0]+=1
-}
-else{
-continue;
-}
-
-player=prompt("Dont give up");
-computer=computerPlay();
-  }
-return score;
-
-  }
-
-
-
-const player=prompt("Enter rock paper or scissors");
-const computer=computerPlay();
-
-console.log(game(player,computer));
-
-
-</script>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
